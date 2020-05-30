@@ -19,5 +19,7 @@ import drugMusicApp.views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', drugMusicApp.views.main, name="main")
+    path('', drugMusicApp.views.main, name="main"),
+    path('profile/new', drugMusicApp.views.profileNew, name="profileNew"),
+    path('profile/save', drugMusicApp.views.profileSave, name="profileSave"),
 ]

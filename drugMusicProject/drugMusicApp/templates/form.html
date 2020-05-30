@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/form.css' %}" />
+{% endblock %}
+{% block contents %}
+<div>
+   <form method="POST" action="{% url 'profileSave' %}", enctype="multipart/form-data">{% csrf_token %}
+       <input placeholder="이름" name="name"/>
+       <input placeholder="장르" name="genre"/>
+       <input placeholder="주요 공연 지역" name="place"/>
+       <br>
+       <input placeholder="한줄평" name="comment"/>
+       <br>
+       <textarea placeholder="내용", rows="8" name="text"></textarea>
+       <br>
+       <input type="file" name="photo">
+       <button type="submit">프로필 공유하기</button>
+   </form>
+</div>
+{% endblock %}
