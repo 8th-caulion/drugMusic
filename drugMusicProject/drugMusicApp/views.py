@@ -8,7 +8,8 @@ def main(request):
     return render(request, 'main.html', {"profiles":profiles})
 
 def profile(request):
-    return render(request, 'profile.html')
+    profiles = Profile.objects.all
+    return render(request, 'profile.html', {"profiles":profiles})
 
 def detailProfile(request, id):
     profile = get_object_or_404(Profile, pk=id)

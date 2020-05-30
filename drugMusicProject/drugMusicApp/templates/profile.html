@@ -6,6 +6,15 @@
 {% endblock %}
 {% block contents %}
 <div>
+   {% for profile in profiles %}
 
+   {{profile.image}}
+   {{profile.name}}
+   {{profile.category}}
+   {{profile.place}}
+   {{profile.line}}
+   {{profile.detail}}
+
+   {% endfor %}
 </div>
 {% endblock %}
