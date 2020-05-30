@@ -1,3 +1,32 @@
 body {
     font-family: 'Nanum Gothic', sans-serif;
 }
+
+#logo {
+    width: 62px;
+    height: 62px;
+    margin-left: 80px;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    height: 93px;
+    background-image: url('../img/navbar_background.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+header nav {
+    width: 40%;
+    margin-right: 10px;
+    margin-left: auto;
+}
+
+header nav ul {
+    display: flex;
+}
+
+.navList {
+    flex: 1;
+}
