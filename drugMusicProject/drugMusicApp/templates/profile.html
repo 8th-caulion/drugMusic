@@ -5,16 +5,79 @@
 <link rel="stylesheet" type="text/css" href="{% static 'css/profile.css' %}" />
 {% endblock %}
 {% block contents %}
-<div>
-   {% for profile in profiles %}
+<div style="display: flex; justify-content: center;">
+   <div class="profileContainer">
+      {% for profile in profiles %}
+      <div class="card">
+         <img src="{{profile.image.url}}" />
+         <div class="category">
+            {{profile.category}}
+         </div>
+         <div class="name">
+            {{profile.name}}
+         </div>
+         <div class="line">
+            {{profile.line}}
+         </div>
+      </div>
+      {% endfor %}
+      {% for profile in profiles %}
+      <div class="card">
+         <img src="{{profile.image.url}}" />
+         <div class="category">
+            {{profile.category}}
+         </div>
+         <div class="name">
+            {{profile.name}}
+         </div>
+         <div class="line">
+            {{profile.line}}
+         </div>
+      </div>
+      {% endfor %}
+      {% for profile in profiles %}
+      <div class="card">
+         <img src="{{profile.image.url}}" />
+         <div class="category">
+            {{profile.category}}
+         </div>
+         <div class="name">
+            {{profile.name}}
+         </div>
+         <div class="line">
+            {{profile.line}}
+         </div>
+      </div>
+      {% endfor %}
+      {% for profile in profiles %}
+      <div class="card">
+         <img src="{{profile.image.url}}" />
+         <div class="category">
+            {{profile.category}}
+         </div>
+         <div class="name">
+            {{profile.name}}
+         </div>
+         <div class="line">
+            {{profile.line}}
+         </div>
+      </div>
+      {% endfor %}
+      {% for profile in profiles %}
+      <div class="card">
+         <img src="{{profile.image.url}}" />
+         <div class="category">
+            {{profile.category}}
+         </div>
+         <div class="name">
+            {{profile.name}}
+         </div>
+         <div class="line">
+            {{profile.line}}
+         </div>
+      </div>
+      {% endfor %}
+   </div>
 
-   {{profile.image}}
-   {{profile.name}}
-   {{profile.category}}
-   {{profile.place}}
-   {{profile.line}}
-   {{profile.detail}}
-
-   {% endfor %}
 </div>
 {% endblock %}
