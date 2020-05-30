@@ -5,7 +5,7 @@
 <link rel="stylesheet" type="text/css" href="{% static 'css/profileDetail.css' %}" />
 {% endblock %}
 {% block contents %}
-<div>
+<div class="profileAllContainer">
     <div class="profileContainer">
         <img src="{{ profile.image.url }}" id="profile" />
         <div id="name">
@@ -16,7 +16,9 @@
         <ul class="detailList">
             <li>{{profile.category}}</li>
             <li>{{profile.place}}</li>
-            <a href="{% url 'edit' profile.id %}"><li class="edit">수정할래요!</li></a>
+            <a href="{% url 'edit' profile.id %}">
+                <li class="edit">수정할래요!</li>
+            </a>
         </ul>
         <div class="description">
             {{profile.detail}}
