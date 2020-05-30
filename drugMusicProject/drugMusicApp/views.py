@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from .schedule import getSchedule
 from .models import Profile, Video
+from django.core.paginator import Paginator
 
 def categoryString(index):
     categories = ['발라드', 'R&B/소울', '인디락', '랩/힙합', '포크/어쿠스틱', '신스팝', '재즈']
@@ -17,6 +18,9 @@ def main(request):
 
 def profile(request):
     profiles = Profile.objects.all()
+    paginator = Paginator(profiles, 8)
+    page = request.GET.get('page')
+    profiles = paginator.get_page(page)
     profiles = list(map(categoryChangedProfile, profiles))
     return render(request, 'profile.html', {"profiles":profiles})
 
