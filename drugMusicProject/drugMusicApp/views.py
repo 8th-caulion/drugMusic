@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from .schedule import getSchedule
 from .models import Profile, Video
 
@@ -9,6 +9,12 @@ def main(request):
 
 def profile(request):
     return render(request, 'profile.html')
+
+def detailProfile(request, id):
+    profile = get_object_or_404(Profile, pk=id)
+    categories = ['발라드', 'R&B/소울', '인디락', '랩/힙합', '포크/어쿠스틱', '신스팝', '재즈']
+    profile.category = categories[profile.category]
+    return render(request, 'profileDetail.html', {'profile' : profile})
 
 def profileNew(request):
 
