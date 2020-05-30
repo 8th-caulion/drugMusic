@@ -10,6 +10,10 @@ def categoryChangedProfile(profile):
     profile.category = categoryString(profile.category)
     return profile
 
+def videoLinkGenerate(video):
+    video.link = "https://www.youtube.com/embed/" + str(video.link)
+    return video
+
 # Create your views here.
 def main(request):
     profiles = Profile.objects.all
@@ -23,6 +27,7 @@ def profile(request):
 def detailProfile(request, id):
     profile = get_object_or_404(Profile, pk=id)
     profile.category = categoryString(profile.category)
+    profile.changedVideos = list(map(videoLinkGenerate, profile.videos.all()))
     return render(request, 'profileDetail.html', {'profile' : profile})
 
 def profileNew(request):

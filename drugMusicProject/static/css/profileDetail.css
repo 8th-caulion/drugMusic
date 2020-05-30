@@ -156,3 +156,8 @@
     padding: 10px;
     margin-right: 10px;
 }
+
+.videoContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
