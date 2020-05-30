@@ -1,0 +1,124 @@
+.profile_share {
+    background-color: #F9AC66;
+    border-radius: 10px;
+    border: 0;
+    outline: 0;
+    color: white;
+    padding: 10px 30px;
+    box-shadow: 0px 3px 25px -13px rgba(0,0,0,0.75);
+    font-size: inherit;
+}
+
+.filebox label {
+    display: inline-block;
+    padding: 10px 20px;
+    color: #fff;
+    font-size: inherit;
+    line-height: normal;
+    vertical-align: middle;
+    background-color: #F9AC66;
+    cursor: pointer;
+    border: 1px solid #F9AC66;
+    border-radius: 10px;
+    -webkit-transition: background-color 0.2s;
+    transition: background-color 0.2s;
+    box-shadow: 0px 3px 25px -13px rgba(0,0,0,0.75);
+  }
+  
+  .filebox label:hover {
+    background-color: rgb(248, 193, 141);
+  }
+  
+  .filebox label:active {
+    background-color: rgb(248, 193, 141);
+  }
+  
+  .filebox input[type="file"] {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+  }
+
+  .box{
+    margin: 50px auto;
+    width: auto;
+    height: 650px;
+    display: flex;
+    flex: 1;
+    padding: 50px;
+  }
+
+  .photo_box {
+    width: 250px;
+    height: 250px;
+    border-radius: 70%;
+    overflow: hidden;
+    box-shadow: 0px 3px 25px -13px rgba(0,0,0,0.75);
+  }
+
+  .container-1 {
+      text-align: center;
+      min-width: 350px;
+  }
+
+  .container-2 {
+      display: flex;
+      margin: 0 100px;
+  }
+
+  input {
+    outline: none;
+    box-shadow: none;
+    border: 1px solid white; 
+    background-color: #EEEEEE;
+    padding: 10px 20px;
+    font-size: 20px;
+  }
+
+  .line1 {
+      display: flex;
+      background-color: white;
+      box-shadow: 0px 3px 25px -13px rgba(0,0,0,0.15);
+      padding: 20px;
+  }
+
+.line1 input {
+    margin: 0 20px;
+}
+
+  .line2 {
+      display: flex;
+      background-color: white;
+      padding: 20px 30px;
+      box-shadow: 0px 3px 25px -13px rgba(0,0,0,0.15);
+  }
+
+  .line3 {
+      background-color: white;
+      box-shadow: 0px 3px 25px -13px rgba(0,0,0,0.15);
+      padding: 20px 30px;
+  }
+
+  textarea {
+    outline: none;
+    box-shadow: none;
+    border: 1px solid white; 
+    background-color: #EEEEEE;
+    font-size: 20px;
+    line-height: 35px;
+    padding: 10px 20px;
+  }
+
+  .select {
+      font-size: 20px;
+  }
+
+
+  .containter-2 > div {
+      margin-bottom: 30px;
+  }
