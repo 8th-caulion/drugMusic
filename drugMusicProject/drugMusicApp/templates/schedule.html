@@ -13,7 +13,7 @@
 <script src="https://uicdn.toast.com/tui.time-picker/latest/tui-time-picker.min.js"></script>
 
 <script src="https://uicdn.toast.com/tui.date-picker/latest/tui-date-picker.min.js"></script>
-
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <script src="https://uicdn.toast.com/tui-calendar/latest/tui-calendar.js"></script>
 <link rel="stylesheet" type="text/css" href="{% static 'css/schedule.css' %}" />
 {% endblock %}
@@ -36,16 +36,44 @@
             }
         },
     });
+    var url = "https://wi8cwa01z1.execute-api.ap-northeast-2.amazonaws.com/dev/get"
 
 
+    // id: '1',
+    //     calendarId: '1',
+    //     title: 'my schedule',
+    //     category: 'time',
+    //     dueDateClass: '',
+    //     start: '2018-01-18T22:30:00+09:00',
+    //     end: '2018-01-19T02:30:00+09:00'
+
+    axios.get(url)
+        .then(function (response) {
+            var dataArray = response.data.rows
+            console.log(dataArray)
+            var scheduleDataArray = dataArray.map(function (data, index) {
+                // name = schedule['name']
+                // lineup = schedule['data']['lineup']
+                // price1 = schedule['price_option']
+                // price2 = schedule['price_desc']
+                // published_at = schedule['published_at']
+                // link = list(filter(lambda u: len(u) != 0, schedule['data']['reservation_url'].values()))
+                return {
+                    id: index,
+                    calendarId: '1',
+                    title: data.name,
+                    category: 'time',
+                    start: data.published_at,
+                    end: data.published_at
+                }
+            })
+            calendar.createSchedules(scheduleDataArray);
+        })
+        .catch(function (error) {
+            console.log(error);
+        })
     window.onload = function () {
 
-        var data = document.getElementById('data').textContent;
-        console.log(data)
-        var dataArray = Array(data);
-        var temp = JSON.parse(data)
-        console.log(temp)
-        console.log(dataArray)
     }
 </script>
 {% endblock %}
