@@ -1,8 +1,8 @@
 h1 {
-    font-size: 30px;
-    padding-top: 80px;
+    font-size: 40px;
+    padding-top: 100px;
     margin-left: 80px;
-    margin-bottom: 300px;
+    margin-bottom: 350px;
     color: white;
     letter-spacing: 0.7rem;
     line-height: 150%;
@@ -27,11 +27,12 @@ h1 span {
     color: #ED6B5B;
     text-align: center;
     font-size: 24px;
-    margin-bottom: 30px;
+    margin-bottom: 70px;
 }
 
 .recommendedArtistContainer {
     display: flex;
+    margin: 0 150px;
 }
 
 .recommendedArtistContainer .artist {}
@@ -54,18 +55,36 @@ h1 span {
 
 .recommendedArtistContainer ul {
     display: flex;
-    overflow: hidden;
+    overflow: auto;
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+.recommendedArtistContainer ul::-webkit-scrollbar {
+    display: none;
+    /* Chrome, Safari, Opera*/
+}
+
+.artist {
+    margin: 0 20px;
 }
 
 .recommendedArtistContainer .artist img {
-    width: 318px;
-    height: 247px;
-    object-fit: contain;
+    width: 250px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    -webkit-box-shadow: 10px 10px 21px -15px rgba(0, 0, 0, 0.56);
+    -moz-box-shadow: 10px 10px 21px -15px rgba(0, 0, 0, 0.56);
+    box-shadow: 10px 10px 21px -15px rgba(0, 0, 0, 0.56);
 }
 
 .recommendedArtistContainer .artist div {
     text-align: center;
-    margin-top: 20px;
+    margin-top: 25px;
+    font-weight: 700;
 }
 
 

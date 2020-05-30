@@ -9,18 +9,18 @@
    <div class="profileContainer">
       {% for profile in profiles %}
       <a href="{% url 'profile' profile.id %}">
-          <div class="card">
-             <img src="{{profile.image.url}}" />
-             <div class="category">
-                {{profile.category}}
-             </div>
-             <div class="name">
-                {{profile.name}}
-             </div>
-             <div class="line">
-                {{profile.line}}
-             </div>
-          </div>
+         <div class="card">
+            <img src="{{profile.image.url}}" />
+            <div class="category">
+               {{profile.category}}
+            </div>
+            <div class="name">
+               {{profile.name}}
+            </div>
+            <div class="line">
+               {{profile.line}}
+            </div>
+         </div>
       </a>
       {% endfor %}
       {% for profile in profiles %}

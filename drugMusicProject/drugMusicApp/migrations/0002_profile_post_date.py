@@ -15,7 +15,7 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='profile',
             name='post_date',
-            field=models.DateTimeField(auto_now_add=True, default=datetime.datetime(2020, 5, 30, 6, 6, 41, 671296, tzinfo=utc)),
+            field=models.DateTimeField(auto_now_add=True, default=datetime.datetime(2020, 5, 30, 6, 6, 33, 536564, tzinfo=utc)),
             preserve_default=False,
         ),
     ]
