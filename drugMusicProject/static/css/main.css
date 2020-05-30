@@ -13,11 +13,93 @@ h1 span {
 
 
 .recommendedArtist {
-    height: 589px;
+    height: 450px;
 }
 
 .recommendedArtist h2 {
     color: #ED6B5B;
     text-align: center;
     font-size: 24px;
+    margin-bottom: 30px;
+}
+
+.recommendedArtistContainer {}
+
+.recommendedArtistContainer .artist {}
+
+.recommendedArtistContainer ul {
+    display: flex;
+    overflow: hidden;
+}
+
+.recommendedArtistContainer .artist img {
+    width: 318px;
+    height: 247px;
+    object-fit: contain;
+}
+
+.recommendedArtistContainer .artist div {
+    text-align: center;
+    margin-top: 20px;
+}
+
+
+.updatedArtistContainer {
+    background-color: #3A3E59;
+    padding: 0 50px;
+    padding-bottom: 50px;
+}
+
+.updatedArtistContainer h2 {
+    color: white;
+    text-align: center;
+    padding: 60px 0;
+}
+
+.updatedArtistCardContainer {
+    display: grid;
+    grid-template-columns: repeat(4, 280px);
+    grid-template-rows: 144px 144px;
+    row-gap: 5px;
+    column-gap: 10px;
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.updatedArtistCard {
+    width: 260px;
+    height: 100px;
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+}
+
+.updatedArtistCard img {
+    width: 79px;
+    height: 79px;
+    object-fit: contain;
+    margin: 10px;
+}
+
+.updatedArtistCard>div {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-left: 10px;
+}
+
+.updatedArtistCard>div>div {
+    margin: 6px 0;
+}
+
+.updatedArtistCard .name {
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.updatedArtistCard .date {
+    font-weight: 300;
+    font-size: 14px;
+
 }
