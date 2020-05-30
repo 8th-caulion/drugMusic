@@ -36,8 +36,8 @@
         <!-- Modal content -->
         <div class="modal-content">
             <span class="close">&times;</span>
-            <form>
-                <input type="text" name="url" />
+            <form method="POST" action="{% url 'video' profile.id %}">{% csrf_token %}
+                <input type="text" name="link" />
                 <button>업로드</button>
             </form>
         </div>

@@ -42,6 +42,19 @@ def profileSave(request):
 
     return redirect('/')
 
+def video(request, artist_id):
+    print(artist_id)
+    link = request.POST.get('link')
+    video = Video()
+    video.link = link
+    myprofile = get_object_or_404(Profile, pk=artist_id)
+    print(link)
+    print(myprofile)
+    video.profile = myprofile
+    video.save()
+    return redirect('/profile/' + str(artist_id))
+
+
 def schedule(request):
 
     schedule = getSchedule()
