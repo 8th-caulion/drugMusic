@@ -29,13 +29,13 @@
                     <select name="genre"
                         style="background-color: #EEEEEE;padding: 10px 10px 10px 10px; border-color: white; font-size: 20px; width: 150px;">
                         <option value="">장르선택</option>
-                        <option value="0">발라드</option>
-                        <option value="1">R&B/소울</option>
-                        <option value="2">인디락</option>
-                        <option value="3">랩/힙합</option>
-                        <option value="4">포크/어쿠스틱</option>
-                        <option value="5">신스팝</option>
-                        <option value="6">재즈</option>
+                        <option value="0" {% if profile.category == 0 %}selected="selected" {% endif %}>발라드</option>
+                        <option value="1" {% if profile.category == 1 %}selected="selected" {% endif %}>R&B/소울</option>
+                        <option value="2" {% if profile.category == 2 %}selected="selected" {% endif %}>인디락</option>
+                        <option value="3" {% if profile.category == 3 %}selected="selected" {% endif %}>랩/힙합</option>
+                        <option value="4" {% if profile.category == 4 %}selected="selected" {% endif %}>포크/어쿠스틱</option>
+                        <option value="5" {% if profile.category == 5 %}selected="selected" {% endif %}>신스팝</option>
+                        <option value="6" {% if profile.category == 6 %}selected="selected" {% endif %}>재즈</option>
                     </select>
                     <input placeholder="주요 공연 지역" name="place" value="{{ profile.place}}"
                         style="border-color: white; background-color: #EEEEEE; flex: 1;" />
@@ -47,7 +47,8 @@
                 </div>
 
                 <div class="line3">
-                    <textarea placeholder="내용" , rows="8" name="text" style=" height: 240px; flex: 1;">{{profile.detail}}</textarea>
+                    <textarea placeholder="내용" , rows="8" name="text"
+                        style=" height: 240px; flex: 1;">{{profile.detail}}</textarea>
                 </div>
 
                 <button class="profile_share" type="submit" style="font-size: 20px; float: right;">프로필 재공유하기</button>
