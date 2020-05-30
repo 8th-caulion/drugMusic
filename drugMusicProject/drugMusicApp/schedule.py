@@ -14,6 +14,7 @@ def parse(schedule):
     lineup = schedule['data']['lineup']
     price1 = schedule['price_option']
     price2 = schedule['price_desc']
+    published_at = schedule['published_at']
     link = list(filter(lambda u: len(u) != 0, schedule['data']['reservation_url'].values()))
     if len(link) != 0:
         link = link[0]
@@ -24,5 +25,6 @@ def parse(schedule):
         "lineup" : lineup,
         "link" : link,
         "price1" : price1,
-        "price2" : price2
+        "price2" : price2,
+        'published_at' : published_at
     }
