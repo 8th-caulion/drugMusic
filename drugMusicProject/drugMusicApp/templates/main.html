@@ -21,10 +21,12 @@
             <div class="recommendedArtistContainer">
                 <ul>
                     {% for profile in recommendedProfiles %}
-                    <li class="artist">
-                        <img src="{{profile.image.url}}" />
-                        <div>{{profile.name }}</div>
-                    </li>
+                    <a href="{% url 'profile' profile.id %}">
+                        <li class="artist">
+                            <img src="{{profile.image.url}}" />
+                            <div>{{profile.name }}</div>
+                        </li>
+                    </a>
                     {% endfor %}x
                 </ul>
             </div>
@@ -33,17 +35,19 @@
             <h2>프로필이 새로 업데이트되었어요!</h2>
             <div class="updatedArtistCardContainer">
                 {% for profile in updatedProfiles %}
-                <div class="updatedArtistCard">
-                    <img src="{{profile.image.url}}" />
-                    <div>
-                        <div class="name">
-                            {{profile.name}}
-                        </div>
-                        <div class="date">
-                            {{profile.post_date}}
+                <a href="{% url 'profile' profile.id %}">
+                    <div class="updatedArtistCard">
+                        <img src="{{profile.image.url}}" />
+                        <div>
+                            <div class="name">
+                                {{profile.name}}
+                            </div>
+                            <div class="date">
+                                {{profile.post_date}}
+                            </div>
                         </div>
                     </div>
-                </div>
+                </a>
                 {% endfor %}
             </div>
         </div>
