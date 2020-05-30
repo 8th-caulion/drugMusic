@@ -26,8 +26,13 @@
         <div class="videosHeader">
             <div>들으면 반하는 라이브 영상</div><button id="upload">영상 업로드</button>
         </div>
-        <div>
+        <div class="videoContainer">
+            {% for video in profile.changedVideos %}
 
+            <iframe width="560" height="315" src="{{video.link}}" frameborder="0"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+            {% endfor %}
         </div>
     </div>
     <!-- The Modal -->
@@ -36,9 +41,9 @@
         <!-- Modal content -->
         <div class="modal-content">
             <span class="close">&times;</span>
-            <form method="POST" action="{% url 'video' profile.id %}">{% csrf_token %}
-                <input type="text" name="link" />
-                <button>업로드</button>
+            <form method="POST" action="{% url 'video' profile.id %}" id="frm">{% csrf_token %}
+                <input type="text" name="link" id="link" />
+                <button type="button" id="upButton">업로드</button>
             </form>
         </div>
 
@@ -52,11 +57,15 @@
     // Get the modal
     var modal = document.getElementById('myModal');
 
+
+    var uBtn = document.getElementById('upButton');
     // Get the button that opens the modal
     var btn = document.getElementById("upload");
 
     // Get the <span> element that closes the modal
     var span = document.getElementsByClassName("close")[0];
+
+    var link = document.getElementById('link')
 
     // When the user clicks on the button, open the modal 
     btn.onclick = function () {
@@ -73,6 +82,22 @@
         if (event.target == modal) {
             modal.style.display = "none";
         }
+        // modal.onclick = function () {
+        //     modal.style.display = "none";
+        // }
     }
+
+    window.onload = function () {
+        uBtn.onclick = function () {
+            var regExp = /https:\/\/www\.youtube\.com\/watch\?v=[\S]*/g;
+            if (link.value.match(regExp)) {
+                link.value = link.value.split('=')[1]
+                document.getElementById('frm').submit();
+            } else {
+                alert("올바른 Youtube 주소가 아닙니다")
+            }
+            // return false;
+        };
+    };
 </script>
 {% endblock %}
