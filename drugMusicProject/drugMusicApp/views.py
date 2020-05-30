@@ -97,4 +97,4 @@ def schedule(request):
     schedule = getSchedule()
     print(schedule)
 
-    return render(request, 'schedule.html')
+    return render(request, 'schedule.html', {'data' : schedule})

@@ -19,6 +19,9 @@
 {% endblock %}
 {% block contents %}
 <div id="calendar" style="height: 800px;"></div>
+<div id="data" style="display: none;">
+    {{data}}
+</div>
 {% endblock %}
 
 {% block script %}
@@ -33,5 +36,16 @@
             }
         },
     });
+
+
+    window.onload = function () {
+
+        var data = document.getElementById('data').textContent;
+        console.log(data)
+        var dataArray = Array(data);
+        var temp = JSON.parse(data)
+        console.log(temp)
+        console.log(dataArray)
+    }
 </script>
 {% endblock %}
