@@ -16,11 +16,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 import drugMusicApp.views
+import drugMusicApp.schedule
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', drugMusicApp.views.main, name="main"),
     path('profile/new', drugMusicApp.views.profileNew, name="profileNew"),
     path('profile/save', drugMusicApp.views.profileSave, name="profileSave"),
+    path('schedule', drugMusicApp.views.schedule, name="schedule"),
     path('profile/', drugMusicApp.views.profile, name="profile"),
 ]

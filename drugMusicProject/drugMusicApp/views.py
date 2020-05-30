@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from .schedule import getSchedule
 from .models import Profile, Video
 
 # Create your views here.
@@ -34,3 +35,10 @@ def profileSave(request):
     profile.save()
 
     return redirect('/')
+
+def schedule(request):
+
+    schedule = getSchedule()
+    print(schedule)
+
+    return render(request, 'schedule.html')
