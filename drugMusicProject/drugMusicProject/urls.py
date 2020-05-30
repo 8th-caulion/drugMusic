@@ -22,4 +22,5 @@ urlpatterns = [
     path('', drugMusicApp.views.main, name="main"),
     path('profile/new', drugMusicApp.views.profileNew, name="profileNew"),
     path('profile/save', drugMusicApp.views.profileSave, name="profileSave"),
+    path('profile/', drugMusicApp.views.profile, name="profile"),
 ]
