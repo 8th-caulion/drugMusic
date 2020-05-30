@@ -15,10 +15,16 @@ def videoLinkGenerate(video):
     video.link = "https://www.youtube.com/embed/" + str(video.link)
     return video
 
+def dateChange(profile):
+    profile.post_date = profile.post_date.strftime("%Y %b %d")
+    return profile
+
 # Create your views here.
 def main(request):
-    profiles = Profile.objects.all
-    return render(request, 'main.html', {"profiles":profiles})
+    recommendedProfiles = Profile.objects.all().order_by("?")[:30]
+    updatedProfiles= Profile.objects.all().order_by('-post_date')[:8]
+    updatedProfiles = list(map(dateChange, updatedProfiles))
+    return render(request, 'main.html', {"recommendedProfiles":recommendedProfiles, 'updatedProfiles' : updatedProfiles})
 
 def profile(request):
     profiles = Profile.objects.all()

@@ -19,123 +19,32 @@
                 DRUG MUSIC에서 추천하는 오늘의 아티스트
             </h2>
             <div class="recommendedArtistContainer">
-                <div class="leftArrow">〈</div>
                 <ul>
+                    {% for profile in recommendedProfiles %}
                     <li class="artist">
-                        <img src="{% static 'img/yebit.jpg' %}" />
-                        <div>예빛</div>
+                        <img src="{{profile.image.url}}" />
+                        <div>{{profile.name }}</div>
                     </li>
-                    <li class="artist">
-                        <img src="{% static 'img/yebit.jpg' %}" />
-                        <div>예빛</div>
-                    </li>
-                    <li class="artist">
-                        <img src="{% static 'img/yebit.jpg' %}" />
-                        <div>예빛</div>
-                    </li>
-                    <li class="artist">
-                        <img src="{% static 'img/yebit.jpg' %}" />
-                        <div>예빛</div>
-                    </li>
-                    <li class="artist">
-                        <img src="{% static 'img/yebit.jpg' %}" />
-                        <div>예빛</div>
-                    </li>
+                    {% endfor %}x
                 </ul>
-                <div class="rightArrow">〉</div>
             </div>
         </div>
         <div class="updatedArtistContainer">
             <h2>프로필이 새로 업데이트되었어요!</h2>
             <div class="updatedArtistCardContainer">
+                {% for profile in updatedProfiles %}
                 <div class="updatedArtistCard">
-                    <img src="{% static 'img/yebit.jpg' %}" />
+                    <img src="{{profile.image.url}}" />
                     <div>
                         <div class="name">
-                            예빛
+                            {{profile.name}}
                         </div>
                         <div class="date">
-                            20 April 2020
+                            {{profile.post_date}}
                         </div>
                     </div>
                 </div>
-                <div class="updatedArtistCard">
-                    <img src="{% static 'img/yebit.jpg' %}" />
-                    <div>
-                        <div class="name">
-                            예빛
-                        </div>
-                        <div class="date">
-                            20 April 2020
-                        </div>
-                    </div>
-                </div>
-                <div class="updatedArtistCard">
-                    <img src="{% static 'img/yebit.jpg' %}" />
-                    <div>
-                        <div class="name">
-                            예빛
-                        </div>
-                        <div class="date">
-                            20 April 2020
-                        </div>
-                    </div>
-                </div>
-                <div class="updatedArtistCard">
-                    <img src="{% static 'img/yebit.jpg' %}" />
-                    <div>
-                        <div class="name">
-                            예빛
-                        </div>
-                        <div class="date">
-                            20 April 2020
-                        </div>
-                    </div>
-                </div>
-                <div class="updatedArtistCard">
-                    <img src="{% static 'img/yebit.jpg' %}" />
-                    <div>
-                        <div class="name">
-                            예빛
-                        </div>
-                        <div class="date">
-                            20 April 2020
-                        </div>
-                    </div>
-                </div>
-                <div class="updatedArtistCard">
-                    <img src="{% static 'img/yebit.jpg' %}" />
-                    <div>
-                        <div class="name">
-                            예빛
-                        </div>
-                        <div class="date">
-                            20 April 2020
-                        </div>
-                    </div>
-                </div>
-                <div class="updatedArtistCard">
-                    <img src="{% static 'img/yebit.jpg' %}" />
-                    <div>
-                        <div class="name">
-                            예빛
-                        </div>
-                        <div class="date">
-                            20 April 2020
-                        </div>
-                    </div>
-                </div>
-                <div class="updatedArtistCard">
-                    <img src="{% static 'img/yebit.jpg' %}" />
-                    <div>
-                        <div class="name">
-                            예빛
-                        </div>
-                        <div class="date">
-                            20 April 2020
-                        </div>
-                    </div>
-                </div>
+                {% endfor %}
             </div>
         </div>
     </div>
