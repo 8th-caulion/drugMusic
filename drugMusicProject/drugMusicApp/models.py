@@ -7,6 +7,7 @@ class Profile(models.Model):
     detail = models.TextField()
     place = models.CharField(max_length = 20)
     line = models.CharField(max_length = 20)
+    post_date = models.DateTimeField(auto_now_add=True)
 
 class Video(models.Model):
     profile = models.ForeignKey(Profile, on_delete=models.CASCADE, related_name="videos")
