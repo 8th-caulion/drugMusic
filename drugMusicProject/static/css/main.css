@@ -23,9 +23,27 @@ h1 span {
     margin-bottom: 30px;
 }
 
-.recommendedArtistContainer {}
+.recommendedArtistContainer {
+    display: flex;
+}
 
 .recommendedArtistContainer .artist {}
+
+.recommendedArtistContainer .leftArrow {
+    display: flex;
+    align-items: center;
+    margin-left: 25px;
+    font-size: 40px;
+    color: #ED6B5B;
+}
+
+.recommendedArtistContainer .rightArrow {
+    display: flex;
+    align-items: center;
+    margin-left: 25px;
+    font-size: 40px;
+    color: #ED6B5B;
+}
 
 .recommendedArtistContainer ul {
     display: flex;
