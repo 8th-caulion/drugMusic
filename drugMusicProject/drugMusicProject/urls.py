@@ -29,6 +29,7 @@ urlpatterns = [
     path('profile/', drugMusicApp.views.profile, name="profile"),
     path('profile/<int:id>', drugMusicApp.views.detailProfile, name="profile"),
     path('video/<int:artist_id>', drugMusicApp.views.video, name="video"),
+    path('profile/edit/<int:id>', drugMusicApp.views.edit, name="edit"),
 ]
 
 if settings.DEBUG: 

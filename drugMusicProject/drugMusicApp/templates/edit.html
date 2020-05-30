@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/form.css' %}" />
+{% endblock %}
+{% block contents %}
+<div>
+    <form method="POST" action="{% url 'profileSave' %}" , enctype="multipart/form-data">{% csrf_token %}
+
+        <div class="box">
+
+            <div class="container-1">
+                <div class="photobox">
+                    <img src="{% static 'img/blanck_profile.jpg' %}"
+                        style="width: 200px; height: 200px;border-radius: 70%;overflow: hidden; box-shadow: 0px 3px 25px -13px rgba(0,0,0,0.15);">
+                    <div style="padding: 10px;"></div>
+                </div>
+                <div class="filebox">
+                    <label for="photo" style="font-size: 20px;">사진 업로드</label>
+                    <input type="file" name="photo" id="photo">
+                </div>
+            </div>
+
+            <div class="container-2">
+                <div class="line1">
+                    <input placeholder="이름" name="name"
+                        style="border-color: white; background-color: #EEEEEE; box-shadow: none; outline: none; border: none; flex : 1;" />
+                    <select name="genre"
+                        style="background-color: #EEEEEE;padding: 10px 10px 10px 10px; border-color: white; font-size: 20px; width: 150px;">
+                        <option value="">장르선택</option>
+                        <option value="0">발라드</option>
+                        <option value="1">R&B/소울</option>
+                        <option value="2">인디락</option>
+                        <option value="3">랩/힙합</option>
+                        <option value="4">포크/어쿠스틱</option>
+                        <option value="5">신스팝</option>
+                        <option value="6">재즈</option>
+                    </select>
+                    <input placeholder="주요 공연 지역" name="place"
+                        style="border-color: white; background-color: #EEEEEE; flex: 1;" />
+                </div>
+
+                <div class="line2">
+                    <input placeholder="한줄평" name="comment"
+                        style="border-color: white; background-color: #EEEEEE; flex: 1; height: 50px;" />
+                </div>
+
+                <div class="line3">
+                    <textarea placeholder="내용" , rows="8" name="text" style=" height: 240px; flex: 1;"></textarea>
+                </div>
+
+                <button class="profile_share" type="submit" style="font-size: 20px; float: right;">프로필 공유하기</button>
+            </div>
+        </div>
+</div>
+
+</form>
+</div>
+{% endblock %}

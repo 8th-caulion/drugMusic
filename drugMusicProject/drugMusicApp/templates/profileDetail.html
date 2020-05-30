@@ -16,7 +16,7 @@
         <ul class="detailList">
             <li>{{profile.category}}</li>
             <li>{{profile.place}}</li>
-            <li class="edit">수정할래요!</li>
+            <a href="{% url 'edit' profile.id %}"><li class="edit">수정할래요!</li></a>
         </ul>
         <div class="description">
             {{profile.detail}}

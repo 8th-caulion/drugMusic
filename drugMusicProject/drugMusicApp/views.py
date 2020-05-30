@@ -20,6 +20,10 @@ def main(request):
     profiles = Profile.objects.all
     return render(request, 'main.html', {"profiles":profiles})
 
+def edit(request, id):
+    profile = get_object_or_404(Profile, pk=id)
+    return render(request, 'edit.html', {'profile' : profile})
+
 def profile(request):
     profiles = Profile.objects.all()
     paginator = Paginator(profiles, 8)
