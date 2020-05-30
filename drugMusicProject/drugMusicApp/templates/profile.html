@@ -5,7 +5,7 @@
 <link rel="stylesheet" type="text/css" href="{% static 'css/profile.css' %}" />
 {% endblock %}
 {% block contents %}
-<div style="display: flex; justify-content: center;">
+<div style="display: flex; justify-content: center; flex-direction: column;">
    <div class="profileContainer">
       {% for profile in profiles %}
       <a href="{% url 'profile' profile.id %}">
@@ -23,62 +23,17 @@
          </div>
       </a>
       {% endfor %}
-      {% for profile in profiles %}
-      <div class="card">
-         <img src="{{profile.image.url}}" />
-         <div class="category">
-            {{profile.category}}
-         </div>
-         <div class="name">
-            {{profile.name}}
-         </div>
-         <div class="line">
-            {{profile.line}}
-         </div>
-      </div>
-      {% endfor %}
-      {% for profile in profiles %}
-      <div class="card">
-         <img src="{{profile.image.url}}" />
-         <div class="category">
-            {{profile.category}}
-         </div>
-         <div class="name">
-            {{profile.name}}
-         </div>
-         <div class="line">
-            {{profile.line}}
-         </div>
-      </div>
-      {% endfor %}
-      {% for profile in profiles %}
-      <div class="card">
-         <img src="{{profile.image.url}}" />
-         <div class="category">
-            {{profile.category}}
-         </div>
-         <div class="name">
-            {{profile.name}}
-         </div>
-         <div class="line">
-            {{profile.line}}
-         </div>
-      </div>
-      {% endfor %}
-      {% for profile in profiles %}
-      <div class="card">
-         <img src="{{profile.image.url}}" />
-         <div class="category">
-            {{profile.category}}
-         </div>
-         <div class="name">
-            {{profile.name}}
-         </div>
-         <div class="line">
-            {{profile.line}}
-         </div>
-      </div>
-      {% endfor %}
+   </div>
+   <div class="nav">
+      <ul>
+         <li class="arrow"><a href="?page=1">〈</a></li>
+         {% for page in pages %}
+         <li {% if page == profiles.number %}class="active" {% endif %}>
+            <a href="?page={{ page }}">{{ page }}</a>
+         </li>
+         {% endfor %}
+         <li class="arrow"><a href="?page={{profiles.paginator.num_pages}}">〉</a></li>
+      </ul>
    </div>
 
 </div>

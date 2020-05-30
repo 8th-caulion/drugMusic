@@ -32,11 +32,21 @@ def edit(request, id):
 
 def profile(request):
     profiles = Profile.objects.all()
+    profiles = list(map(categoryChangedProfile, profiles))
     paginator = Paginator(profiles, 8)
     page = request.GET.get('page')
     profiles = paginator.get_page(page)
-    profiles = list(map(categoryChangedProfile, profiles))
-    return render(request, 'profile.html', {"profiles":profiles})
+
+    page_numbers_range = 5  # Display only 5 page numbers
+    max_index = len(paginator.page_range)
+    current_page = int(page) if page else 1
+    start_index = int((current_page - 1) / page_numbers_range) * page_numbers_range
+    end_index = start_index + page_numbers_range
+    if end_index >= max_index:
+        end_index = max_index
+
+    page_range = paginator.page_range[start_index:end_index]
+    return render(request, 'profile.html', {"profiles":profiles, 'pages' : page_range})
 
 def detailProfile(request, id):
     profile = get_object_or_404(Profile, pk=id)
