@@ -15,11 +15,21 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.conf import settings # 이거 추가
+from django.conf.urls.static import static # 이거 추가
 import drugMusicApp.views
+import drugMusicApp.schedule
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', drugMusicApp.views.main, name="main"),
     path('profile/new', drugMusicApp.views.profileNew, name="profileNew"),
     path('profile/save', drugMusicApp.views.profileSave, name="profileSave"),
+    path('schedule', drugMusicApp.views.schedule, name="schedule"),
+    path('profile/', drugMusicApp.views.profile, name="profile"),
+    path('profile/<int:id>', drugMusicApp.views.detailProfile, name="profile"),
+    path('video/<int:artist_id>', drugMusicApp.views.video, name="video"),
 ]
+
+if settings.DEBUG: 
+    urlpatterns += static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)

@@ -1,0 +1,158 @@
+#profile {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 100%;
+    overflow: hidden;
+}
+
+.profileContainer {
+    padding-left: 150px;
+    display: flex;
+    padding-top: 80px;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+#name {
+    font-weight: 700;
+    font-size: 40px;
+    padding-left: 80px;
+}
+
+.detail {
+    margin-left: 200px;
+    margin-bottom: 200px;
+}
+
+.detailList {
+    display: flex;
+}
+
+.detailList li {
+    background-color: #3A3E59;
+    border-radius: 10px;
+    color: white;
+    padding: 10px 30px;
+    font-weight: 100;
+    margin: 0 20px;
+    -webkit-box-shadow: 10px 10px 31px -19px rgba(0, 0, 0, 0.89);
+    -moz-box-shadow: 10px 10px 31px -19px rgba(0, 0, 0, 0.89);
+    box-shadow: 10px 10px 31px -19px rgba(0, 0, 0, 0.89);
+}
+
+.detailList .edit {
+    background-color: #F9AA64;
+}
+
+.detail div {
+    margin-top: 30px;
+    padding-left: 20px;
+    line-height: 150%;
+}
+
+.videos {
+    background-color: #3A3E59;
+    min-height: 300px;
+}
+
+.videosHeader {
+    display: flex;
+    position: relative;
+    padding-top: 30px;
+}
+
+.videosHeader div {
+    text-align: center;
+    flex: 1;
+    color: white;
+    font-size: 22px;
+}
+
+.videosHeader button {
+    position: absolute;
+    right: 25px;
+    border: none;
+    outline: none;
+    background-color: white;
+    border-radius: 10px;
+    padding: 5px 10px;
+    font-size: 15px;
+}
+
+
+
+
+/* The Modal (background) */
+.modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%;
+    /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-content form {
+    display: flex;
+}
+
+.modal-content input {
+    outline: none;
+    border: none;
+    background-color: rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    flex: 1;
+    margin-right: 20px;
+}
+
+.modal-content button {
+    border: none;
+    outline: none;
+    background-color: white;
+    padding: 10px;
+    font-size: 15px;
+    background-color: #F9AA64;
+    color: white;
+    border-radius: 10px;
+    padding: 10px;
+    margin-right: 10px;
+}
