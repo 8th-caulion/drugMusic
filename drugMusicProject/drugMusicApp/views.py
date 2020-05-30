@@ -30,6 +30,21 @@ def edit(request, id):
     profile = get_object_or_404(Profile, pk=id)
     return render(request, 'edit.html', {'profile' : profile})
 
+def update(request, id):
+    profile = get_object_or_404(Profile, pk=id)
+    profile.name = request.POST['name']
+    profile.category = request.POST['genre']
+    profile.place = request.POST['place']
+    profile.line = request.POST['comment']
+    profile.detail = request.POST['text']
+    if request.FILES:
+        profile.image = request.FILES['photo']
+   
+    profile.save()
+
+    return redirect('/')
+
+
 def profile(request):
     profiles = Profile.objects.all()
     paginator = Paginator(profiles, 8)
