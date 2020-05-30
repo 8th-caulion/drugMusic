@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from .schedule import getSchedule
 
 # Create your views here.
 def main(request):
@@ -17,3 +18,10 @@ def profileSave(request):
     img = request.FILES['photo']
     print(name, genre, place, comment, text, img)
     return redirect('/')
+
+def schedule(request):
+
+    schedule = getSchedule()
+    print(schedule)
+
+    return render(request, 'schedule.html')
